@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Task.destroy_all
+
+10.times do |x|
+  task = Task.new(name: "List number #{x + 1}", description: "descript number #{x + 1}", priority: rand(5))
+  puts task.name if task.save
+end
